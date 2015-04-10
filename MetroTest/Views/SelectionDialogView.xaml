@@ -1,0 +1,53 @@
+﻿<Dialogs:BaseMetroDialog
+  x:Class="CustomDialogTest.Views.SelectionDialogView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:Dialogs="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+  mc:Ignorable="d"
+  d:DesignHeight="300" d:DesignWidth="300"
+  DataContext="{Binding Source={StaticResource Locator}, Path=SelectionDialog}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label
+      Grid.Row="0"
+      Content="_Select Operation Code:"
+      Margin="0 4" FontWeight="Bold"/>
+        <ListBox
+      Grid.Row="1" 
+      ItemsSource="{Binding DownCodes}"
+      SelectedItem="{Binding SelectedOpCode}"
+      Margin="0 5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} - {1}">
+                                <Binding Path="OperationCode" />
+                                <Binding Path="Description" />
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <StackPanel
+      Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
+      Orientation="Horizontal" HorizontalAlignment="Right"
+      Margin="0 5 0 10">
+            <Button Command="{Binding OkCommand}" Content="OK" Margin="0 0 10 0" Width="100" IsDefault="True"/>
+            <Button Command="{Binding CancelCommand}" Content="Cancel" Margin="0 0 10 0" Width="100"/>
+        </StackPanel>
+
+    </Grid>
+</Dialogs:BaseMetroDialog>
