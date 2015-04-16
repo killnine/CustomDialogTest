@@ -78,7 +78,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\DialogViewModel.cs" />
-    <Compile Include="Helpers\ExpressionHelper.cs" />
     <Compile Include="Helpers\Interfaces\IDialogManager.cs" />
     <Compile Include="Helpers\Interfaces\IDialogViewModel.cs" />
     <Compile Include="Helpers\ViewLocator.cs" />
