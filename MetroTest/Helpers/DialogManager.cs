@@ -30,7 +30,8 @@ namespace CustomDialogTest.Helpers
 
         public Task ShowDialogAsync<TViewModel>() where TViewModel : DialogViewModel
         {
-            var viewModel = ServiceLocator.Current.GetInstance<TViewModel>();
+            //var viewModel = ServiceLocator.Current.GetInstance<TViewModel>();
+            var viewModel = Activator.CreateInstance<TViewModel>();
             return ShowDialogAsync(viewModel);
         }
 
@@ -55,7 +56,8 @@ namespace CustomDialogTest.Helpers
 
         public Task<TResult> ShowDialogAsync<TViewModel, TResult>() where TViewModel : DialogViewModel<TResult>
         {
-            var viewModel = ServiceLocator.Current.GetInstance<TViewModel>();
+            //var viewModel = ServiceLocator.Current.GetInstance<TViewModel>();
+            var viewModel = Activator.CreateInstance<TViewModel>();
             return ShowDialogAsync(viewModel);
         }
 

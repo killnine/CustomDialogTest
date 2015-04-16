@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CustomDialogTest.Helpers;
@@ -21,6 +22,18 @@ namespace CustomDialogTest.ViewModels
         private async Task OpenDialog()
         {
             var opCode = await _dialogManager.ShowDialogAsync<SelectionDialogViewModel, OpCode>();
+
+            string result = string.Empty;
+            if (opCode != null)
+            {
+                result = "You selected operation code: " + opCode.Description;
+            }
+            else
+            {
+                result = "You didn't select an operation code!";
+            }
+
+            await _dialogManager.ShowMessageBox("Result", result);
         }
     }
 }

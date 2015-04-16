@@ -10,7 +10,6 @@ namespace CustomDialogTest.ViewModels
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MainViewModel>();
-            SimpleIoc.Default.Register<SelectionDialogViewModel>();
         }
 
         public MainViewModel Main
@@ -18,14 +17,6 @@ namespace CustomDialogTest.ViewModels
             get
             {
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
-            }
-        }
-
-        public SelectionDialogViewModel SelectionDialog
-        {
-            get
-            {
-                return ServiceLocator.Current.GetInstance<SelectionDialogViewModel>();
             }
         }
     }

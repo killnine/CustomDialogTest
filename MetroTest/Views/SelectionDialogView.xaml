@@ -6,8 +6,7 @@
   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
   xmlns:Dialogs="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
   mc:Ignorable="d"
-  d:DesignHeight="300" d:DesignWidth="300"
-  DataContext="{Binding Source={StaticResource Locator}, Path=SelectionDialog}">
+  d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
